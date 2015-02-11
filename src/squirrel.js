@@ -1,4 +1,4 @@
-var ctx = document.getElementById("c").getContext("2d");
+var ctx = document.getElementById("c").getContext("2d"); 
 function onKeyDown(e) {
 	if (e.keyCode == 68 || e.keyCode == 100) rightDown = true;
 	else if (e.keyCode == 65 || e.keyCode == 97) leftDown = true;
