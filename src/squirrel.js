@@ -19,6 +19,11 @@ function Squirrel() {
 	var hp = 10;
 	var pow = 3;
 }
+function Astronaut() {
+	var hp = 10;
+	var pow = 2;
+	
+}
 function clear() {
  	ctx.clearRect(0,0,600,600);
 }
@@ -30,7 +35,7 @@ function draw() {
   	background();
   	if(action == "select") {
   		if(rightDown == true) {
-  			if(selected < 2) {
+  			if(selected < 3) {
   				selected++;	
   			}
   		}
@@ -44,6 +49,10 @@ function draw() {
   		}
   	} 
   	else if(action == "attack") {
+  		
+  		action = 'off-turn';
+  	}
+  	else if(action == "parry") {
   		
   		action = 'off-turn';
   	}
