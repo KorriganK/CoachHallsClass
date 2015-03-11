@@ -2,7 +2,7 @@ var ctx = document.getElementById("c").getContext("2d");
 var back = new Image();
 var rightDown; var leftDown; var zDown;
 var action = "select";
-var selectf = ['attack','defend'];
+var selectf = ['attack','defend', 'parry'];
 var selected = 0;
 back.src="https://cloud.githubusercontent.com/assets/7268773/6169905/2634dea6-b296-11e4-9db6-b0b7733d9bc6.png";
 function onKeyDown(e) {
@@ -35,7 +35,7 @@ function draw() {
   	background();
   	if(action == "select") {
   		if(rightDown == true) {
-  			if(selected < 3) {
+  			if(selected <= 2) {
   				selected++;	
   			}
   		}
