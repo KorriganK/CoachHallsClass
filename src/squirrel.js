@@ -33,36 +33,38 @@ function background() {
 function draw() {
 	clear();
   	background();
-  	if(action == "select") {
-  		if(rightDown == true) {
-  			if(selected <= 2) {
-  				selected++;	
+  	switch(action) {
+  		case "select":
+  			if(rightDown == true) {
+  				if(selected <= 2) {
+  					selected++;	
+  				}
   			}
-  		}
-  		else if(leftDown == true) {
-  			if(selected > 0) {
-  				selected--;	
-  			}		
-  		}
-  		else if(zDown == true) {
-  			action = selectf[selected];
-  		}
-  	} 
-  	else if(action == "attack") {
+  			else if(leftDown == true) {
+  				if(selected > 0) {
+  					selected--;	
+  				}		
+  			}
+  			else if(zDown == true) {
+  				action = selectf[selected];
+  			}
+  			break;
+  		case "attack":
   		
-  		action = 'off-turn';
-  	}
-  	else if(action == "parry") {
+  			action = 'off-turn';
+  			break;
+  		case "parry":
   		
-  		action = 'off-turn';
-  	}
-  	else if(action == "off-turn") {
+  			action = 'off-turn';
+  			break;
+  		case "off-turn":
   		
-  		action = 'select';
-  	} 
-  	else if(action == "defend") {
-  		
-  		action = 'off-turn';
+  			action = 'select';
+  			break;
+  		case "defend":
+  			
+  			action = 'off-turn';
+  			break;
   	}
 }
 var i = setInterval(draw, 20)
