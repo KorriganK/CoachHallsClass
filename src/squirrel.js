@@ -4,7 +4,7 @@ var rightDown; var leftDown; var zDown;
 var action = "select";
 var selectf = ['attack','defend', 'parry'];
 var selected = 0;
-back.src="https://cloud.githubusercontent.com/assets/7268773/6169905/2634dea6-b296-11e4-9db6-b0b7733d9bc6.png";
+back.src="imgs/back.png";
 function onKeyDown(e) {
 	if (e.keyCode == 68 || e.keyCode == 100) rightDown = true;
 	else if (e.keyCode == 65 || e.keyCode == 97) leftDown = true;
@@ -19,9 +19,29 @@ function Squirrel() {
 	var hp = 10;
 	var pow = 3;
 }
-function Astronaut() {
-	var hp = 10;
-	var pow = 2;
+function Astronaut(type) {
+	this.type : type;
+	this.img = new Image();
+	if(type === "reg") {
+		this.hp : 10;
+		this.pow: 2;
+		this.img.src = "imgs/astro.png";
+	}
+	else if(type === "hevy") {
+		this.hp : 14;
+		this.pow: 3;
+		this.img.src = "imgs/jugg.png";
+	}
+	else if(type === "charl") {
+		this.hp : 8;
+		this.pow: 4;
+		this.img.src = "imgs/charlatan.png";
+	}
+	else if(type === "med") {
+		this.hp : 18;
+		this.pow: 0;
+		this.img.src = "imgs/medic.png";
+	}
 	
 }
 function clear() {
